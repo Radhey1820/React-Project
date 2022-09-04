@@ -11,9 +11,10 @@ function Header(props) {
   return (
     <>
       <div className="logindiv">
+        <h1>Login Form</h1>
         <LoginForm handleCallBack={handleCallBack} />
       </div>
-      <div>
+      <div className="headerdiv">
         <h1>Welcome {username}...</h1>
       </div>
     </>

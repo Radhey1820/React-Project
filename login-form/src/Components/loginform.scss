@@ -6,10 +6,16 @@
     .myform {
         font-size: 22px;
         width: 25%;
+
+        .form-control:focus {
+            height: 100%;
+            width: 100%;
+            border-radius: 50px;
+        }
     }
 
     .loginbtn.btn-primary {
-        background-color: #D6CDA4;
+        background-color: #F9F5EB;
         color: black;
     }
 }
@@ -20,8 +26,7 @@
     .registerbtn {
         font-size: 14px;
         font-weight: bold;
-        background-color: #D6CDA4;
+        background-color: #F9F5EB;
         color: black;
-
     }
 }

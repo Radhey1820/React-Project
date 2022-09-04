@@ -1,7 +1,24 @@
 .logindiv {
-    background-color: #3D8361;
+    h1 {
+        padding-left: 43%;
+        padding-top: 2%;
+    }
+    background-color: #607EAA;
 }
 
 .logindiv:hover {
-    background-color: #1C6758;
+    background-color: #1C3879;
+    color: white;
+}
+
+.headerdiv {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background-color: #EAE3D2;
+}
+
+.headerdiv:hover {
+    background-color: #CA955C
+
 }

@@ -20,6 +20,8 @@ function LoginForm(props) {
     ) {
       props.handleCallBack(username);
       console.log("Name sended!");
+    } else {
+      alert("Username and password didn't match!! Kindly register");
     }
   };
   return (
