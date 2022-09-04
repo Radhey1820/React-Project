@@ -6,6 +6,9 @@
     .myform {
         font-size: 22px;
         width: 25%;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 20px;
 
         .form-control:focus {
             height: 100%;

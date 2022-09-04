@@ -13,7 +13,7 @@ function LoginForm(props) {
     setModalOpen(!modalOpen);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     if (
       username === localStorage.getItem("name") &&
       pass === localStorage.getItem("pass")
@@ -29,7 +29,7 @@ function LoginForm(props) {
       <div className="formdiv">
         <Form className="myform">
           <Form.Group className="mb-3">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label>Username :</Form.Label>
             <Form.Control
               type="text"
               placeholder={username}
@@ -38,7 +38,7 @@ function LoginForm(props) {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label>Password :</Form.Label>
             <Form.Control
               type="password"
               placeholder={pass}
