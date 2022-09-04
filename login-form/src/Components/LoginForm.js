@@ -5,15 +5,19 @@ import RegisterUser from "./Modals/RegisterUser";
 import "./loginform.scss";
 
 function LoginForm(props) {
+  //creating states for username, pass and modal
   const [username, setUsername] = useState("");
   const [pass, setPass] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
 
+  //to openn the modal on click of register btn
   const handleModalOpen = () => {
     setModalOpen(!modalOpen);
   };
 
+  //actions to be performned after submitting the form
   const handleSubmit = (e) => {
+    //authenticating user from local storage
     if (
       username === localStorage.getItem("name") &&
       pass === localStorage.getItem("pass")

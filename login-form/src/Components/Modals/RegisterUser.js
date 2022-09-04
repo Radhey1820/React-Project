@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 
 function RegisterUser(props) {
+  //getting the props from the parent comp
   const { modalOpen, handleModalOpen } = props;
 
   const [name, setName] = useState("");
   const [pass, setPass] = useState("");
 
+  //Actions to be performed on btn click
   const handleRegister = () => {
     console.log("values stored in local storage");
     alert("User Registered!");
@@ -18,6 +20,7 @@ function RegisterUser(props) {
   };
 
   useEffect(() => {
+    //storing the state values in the local storage after successfull registration
     localStorage.setItem("name", name);
     localStorage.setItem("pass", pass);
   }, [name, pass]);
