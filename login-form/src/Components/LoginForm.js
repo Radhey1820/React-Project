@@ -2,20 +2,36 @@ import Button from "react-bootstrap/Button";
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import RegisterUser from "./Modals/RegisterUser";
+import "./loginform.scss";
 
-function LoginForm() {
-  const [email, setEmail] = useState("");
+function LoginForm(props) {
+  const [username, setUsername] = useState("");
   const [pass, setPass] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleModalOpen = () => {
+    setModalOpen(!modalOpen);
+  };
+
+  const handleSubmit = () => {
+    if (
+      username === localStorage.getItem("name") &&
+      pass === localStorage.getItem("pass")
+    ) {
+      props.handleCallBack(username);
+      console.log("Name sended!");
+    }
+  };
   return (
     <>
       <div className="formdiv">
-        <Form>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form className="myform">
+          <Form.Group className="mb-3">
             <Form.Label>Email address</Form.Label>
             <Form.Control
-              type="email"
-              placeholder={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              placeholder={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </Form.Group>
 
@@ -27,16 +43,22 @@ function LoginForm() {
               onChange={(e) => setPass(e.target.value)}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button className="loginbtn" onClick={handleSubmit}>
             Submit
           </Button>
         </Form>
       </div>
-      <div>
+      <div className="myregisterform">
         <p>
-          If you are new user <a href={<RegisterUser />}>Register Here</a>
+          If you are new user{" "}
+          <span>
+            <Button className="registerbtn" onClick={handleModalOpen}>
+              Register Here
+            </Button>
+          </span>
         </p>
       </div>
+      <RegisterUser modalOpen={modalOpen} handleModalOpen={handleModalOpen} />
     </>
   );
 }

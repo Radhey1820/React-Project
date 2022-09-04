@@ -1,0 +1,27 @@
+.formdiv {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+
+    .myform {
+        font-size: 22px;
+        width: 25%;
+    }
+
+    .loginbtn.btn-primary {
+        background-color: #D6CDA4;
+        color: black;
+    }
+}
+
+.myregisterform {
+    display: flex;
+    justify-content: center;
+    .registerbtn {
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #D6CDA4;
+        color: black;
+
+    }
+}
